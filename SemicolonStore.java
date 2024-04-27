@@ -94,13 +94,13 @@ System.out.println("Customer Name: "  + customerName);
 
 System.out.println("===========================================================================");
                            
-System.out.println("ITEM             QUantity              PRICE              TOTAL");
+System.out.println("ITEM" + "\t\t" + "QUantity" + "\t\t"  + "PRICE" + "\t\t" + "TOTAL");
 
 System.out.println("---------------------------------------------------------------------------");
   
                   
  for (count = 0; count < items.size(); count++) {
-      System.out.println(items.get(count) + "\t" + "\t" + quantity.get(count) + "\t" + "\t" + "\t" + price.get(count) + "\t" + "\t" + sum.get(count));
+      System.out.println(items.get(count) + "\t\t" + quantity.get(count) + "\t\t" + price.get(count) + "\t\t" + sum.get(count));
 	 subTotal += sum.get(count);
             }
 
