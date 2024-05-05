@@ -7,12 +7,16 @@ public class StudentGrade {
 
 	Scanner scanner = new Scanner(System.in);
 
-	int i = 1;
-	int students = 0;
-	int subjects = 0;
-	int j = 0;
+	int i = 0;
+	int students;
+	int subjects;
+	int j;
 	int total = 0;
-         
+	int m;
+	int y;
+	int z;
+	int average = 0;
+
 	System.out.println("How many students do you have");
 	students = scanner.nextInt();
 
@@ -21,52 +25,81 @@ public class StudentGrade {
 
 	System.out.println();
 
-        int[][] collection = new int[students][subjects];   
+	int[][] collection = new int[students][subjects];
 
+	int scores;
+	int collect = 0;
+
+	int[] tots = new int[students];
+	int[] ave = new int[students]; 
+	
 	for (i = 0; i < students; i++) {
-	for (j = 0; j < subjects; j++) {
-	System.out.printf("Entering Score for student %d%n", i+1);
-	System.out.printf("Enter Score for subject %d%n", j +1);
-		   collection[i][j] = scanner.nextInt();
-
+	for (j = 0; j < subjects; j++) {	
+	System.out.printf("Entering Score for student %d%n", 1+i);
+	System.out.printf("Enter Score for subject %d%n", 1+j);
+		 collect = scanner.nextInt();
+		total += collect;
+		collection[i][j] = collect;
+	
 	System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>");
 	System.out.println("Saved Succesfully");
 
 	System.out.println();
-
-	total = total + subjects;
-	int average = total / subjects;	
+	
+	
 
    }
-}
+	average = total / subjects;
+	tots[i] = total;
+	ave[i] = average;
+	total = 0;
+
+	
+	
+	
 
 
-		 		
+
+
+
+}	
+		
+
 
 	System.out.println("======================================================================================================");
 	
-	System.out.print("STUDENT" + "\t");
+	System.out.print("STUDENT" + "\t\t");
 
-		for (int m = 1; m <= subjects; m++) {
-	System.out.printf("%5s ","Sub" +m);
+		for (m = 1; m <= subjects; m++) {
+	System.out.printf("%s%d\t", "Sub", m);
 	}
+		
 
-	System.out.printf("%4s%5s%5s", "TOT", "AVE", "POS");
+	System.out.print("TOT" + "\t" + "AVE" + "\t" + "POS");
 
 	System.out.println();	
 	
 	System.out.println("====================================================================================================");
 
-	for (int g = 0; g < collection.length; g++) {
-
-	for (int t = 0; t < collection[students].length; t++) {
+	for(y = 0; y < students; y++) {
+	System.out.print("Students" + (1+y) + "\t");
+        for(m = 0; m < subjects; m++) { 
+	System.out.printf("%d\t", collection[y][m]);
+	}
+	System.out.print(tots[y] + "\t");
+	System.out.print(ave[y]);
 	
-	System.out.println(collection[students][subjects] + "  ");
 	
      System.out.println();
-         }
-	}
+     }
+   	
+
+	
+		
+	
+	 
 
 
+	
 }
 }
